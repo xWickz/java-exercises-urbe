@@ -1,10 +1,7 @@
 package ejercicio_2;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.OutputStreamWriter;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /*
@@ -16,8 +13,6 @@ factorial de 5, irá mostrando los resultados 1x1 por hasta llegar al número fi
 public class Main {
     public static void main(String[] args) {
 
-        FileOutputStream fileOutputStream = null;
-        PrintWriter printWriter = null;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Programa de Factorial");
@@ -44,27 +39,13 @@ public class Main {
             
         }
 
-        System.out.println("Resultado guardado en resultado.txt");
-        
-        try {
-            fileOutputStream = new FileOutputStream("C:\\xampp\\htdocs\\pruebas\\src\\ejercicio_2\\resultado.txt");
-            printWriter = new PrintWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            
-            printWriter.printf("%s", pasos);
-            printWriter.flush();
-
+        try(PrintWriter pw = new PrintWriter("C:\\xampp\\htdocs\\pruebas\\src\\ejercicio_2\\resultado.txt")) {
+            pw.printf("%s", pasos);
+            pw.flush();
+            System.out.println("Resultado guardado en resultado.txt");
         } catch(IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                // Should work fine, lol
-                if(fileOutputStream != null)
-                    fileOutputStream.close();
-                if(printWriter != null)
-                    printWriter.close();
-            } catch(IOException e) {
-                e.printStackTrace();
-            }
         }
+
     }
 }
