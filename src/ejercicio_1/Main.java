@@ -30,7 +30,7 @@ public class Main {
             String linea = br.readLine();
             int cantidad = Integer.parseInt(linea.trim());
 
-            final int MATERIAS = 3;
+            final int MATERIAS = 4;
             double sumaTotal = 0;
             int totalNotas = cantidad * MATERIAS;
 

@@ -1,6 +1,6 @@
 Resultado de notas
-El alumno 1 no tiene exactamente 3 notas.
-Alumno 2 - Promedio: 19,00
-Alumno 3 - Promedio: 16,67
+Alumno 1 - Promedio: 17,00
+El alumno 2 no tiene exactamente 4 notas.
+El alumno 3 no tiene exactamente 4 notas.
 
-Promedio general: 11,89
+Promedio general: 5,67
